@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { BsMenuApp } from 'react-icons/bs'
 import { trpc } from 'utils/trpc'
 
 type TechnologyCardProps = {
@@ -54,7 +55,9 @@ const Home: NextPage = () => {
           adipisci. Assumenda dignissimos eligendi sequi ut culpa distinctio
           porro optio.
         </p>
-        <button className="btn btn-secondary mt-2">Hello from DaisyUI!</button>
+        <button className="btn btn-secondary mt-2">
+          <BsMenuApp className="mr-1" /> Hello from DaisyUI!
+        </button>
       </main>
     </>
   )
