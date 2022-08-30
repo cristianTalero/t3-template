@@ -3,6 +3,7 @@ import { env } from "./src/env/server.mjs";
 import { withSentryConfig } from '@sentry/nextjs'
 import withPWA from 'next-pwa'
 import runtimeCaching from 'next-pwa/cache.js'
+import { withSuperjson } from 'next-superjson'
 
 
 /**
@@ -13,8 +14,11 @@ import runtimeCaching from 'next-pwa/cache.js'
  * @param {T} config - A generic parameter that flows through to the return type
  * @constraint {{import('next').NextConfig}}
  */
-function defineNextConfig(config) {
-  return config;
+function defineNextConfig() {
+  return {
+    reactStrictMode: true,
+    swcMinify: true,
+  }
 }
 
 const sentryWebpackPluginOptions = {
@@ -28,10 +32,7 @@ const sentryWebpackPluginOptions = {
 }
 
 const nextConfig = withPWA({
-  ...defineNextConfig({
-    reactStrictMode: true,
-    swcMinify: true,
-  }),
+  ...withSuperjson()(defineNextConfig()),
   pwa: {
     dest: 'public',
     register: true,
