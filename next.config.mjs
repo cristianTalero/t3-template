@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { env } from "./src/env/server.mjs";
 import { withSentryConfig } from '@sentry/nextjs'
 import withPWA from 'next-pwa'
 import runtimeCaching from 'next-pwa/cache.js'
 import { withSuperjson } from 'next-superjson'
-
+import withTM from 'next-transpile-modules'
+import withPlugins from 'next-compose-plugins'
 
 /**
  * Don't be scared of the generics here.
@@ -31,19 +30,17 @@ const sentryWebpackPluginOptions = {
   silent: true
 }
 
-const nextConfig = withPWA({
-  ...withSuperjson()(defineNextConfig()),
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    runtimeCaching,
-    disable: process.env.NODE_ENV !== 'production',
-  }
-})
-
-
 export default withSentryConfig(
-  nextConfig,
+  withPlugins([
+    withPWA({
+      dest: 'public',
+      register: true,
+      skipWaiting: true,
+      runtimeCaching,
+      disable: process.env.NODE_ENV !== 'production'
+    }),
+    withSuperjson(),
+    withTM(['react-daisyui'])
+  ], defineNextConfig()),
   sentryWebpackPluginOptions
 )

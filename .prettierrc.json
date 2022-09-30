@@ -1,9 +1,7 @@
 {
-  "semi": false,
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "useTabs": true,
-  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+	"semi": false,
+	"trailingComma": "es5",
+	"singleQuote": true,
+	"useTabs": true,
+	"endOfLine": "auto"
 }
