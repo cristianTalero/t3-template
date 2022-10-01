@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { BsMenuApp } from 'react-icons/bs'
 import { trpc } from 'utils/trpc'
-import { Button } from 'react-daisyui'
 
 type TechnologyCardProps = {
 	name: string
@@ -48,23 +46,36 @@ const Home: NextPage = () => {
 						description="End-to-end typesafe APIs made easy"
 						documentation="https://trpc.io/"
 					/>
+					<TechnologyCard
+						name="Prisma"
+						description="Prisma is an ORM that helps app developers build faster and make fewer errors"
+						documentation="https://prisma.io/"
+					/>
+					<TechnologyCard
+						name="Cypress"
+						description="Fast, easy and reliable testing for anything that runs in a browser"
+						documentation="https://cypress.io/"
+					/>
+					<TechnologyCard
+						name="Sentry"
+						description="Sentry is a complete javascript debugging and monitoring tool package that allows you to track your production code"
+						documentation="https://sentry.io/"
+					/>
+					<TechnologyCard
+						name="MongoDB"
+						description="MongoDB is a non-relational document database that provides support for JSON-like storage"
+						documentation="https://mongodb.com/"
+					/>
 				</div>
 				<div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full">
 					{hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
 				</div>
-				<p>
+				<p className="prose xl:prose-xl">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut
 					quas quod ab nesciunt inventore laborum, cum praesentium quam delectus
 					adipisci. Assumenda dignissimos eligendi sequi ut culpa distinctio
 					porro optio.
 				</p>
-				<Button
-					color="accent"
-					className="mt-2"
-					startIcon={<BsMenuApp className="mr-1" />}
-				>
-					Hello from DaisyUI!
-				</Button>
 			</main>
 		</>
 	)

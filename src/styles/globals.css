@@ -10,7 +10,3 @@
 .touchable {
     @apply hover:opacity-90 active:scale-95 transition-all cursor-pointer
 }
-
-.tooltip {
-    @apply z-40
-}
