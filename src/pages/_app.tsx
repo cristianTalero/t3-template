@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { SessionProvider } from 'next-auth/react'
 import { transformer } from 'utils/trpc'
 import NextNProgress from 'nextjs-progressbar'
-import 'styles/globals.css'
+import 'styles/index.css'
 
 const MyApp: CustomAppType = ({
 	Component,
