@@ -2,6 +2,7 @@ import { withSentryConfig } from '@sentry/nextjs'
 import withPWA from 'next-pwa'
 import runtimeCaching from 'next-pwa/cache.js'
 import { withSuperjson } from 'next-superjson'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const nextConfig = {
   reactStrictMode: true,
@@ -21,9 +22,19 @@ const sentryWebpackPluginOptions = {
   silent: true
 }
 
-export default withSentryConfig(
-  withPWA(pwaConfig)(withSuperjson()(
-    nextConfig
-  )),
-  sentryWebpackPluginOptions
-)
+const plugins = [
+  withBundleAnalyzer({
+    enabled: process.env.ANALYZE === 'true'
+  }),
+  withPWA(pwaConfig),
+  withSuperjson(),
+  withSentryConfig
+]
+
+export default plugins.reduce((acc, next) => {
+  if (next.name === 'withSentryConfig') {
+    return next(acc, sentryWebpackPluginOptions)
+  }
+
+  return next(acc)
+}, nextConfig)
