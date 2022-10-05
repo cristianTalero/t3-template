@@ -18,6 +18,7 @@
 		"postinstall": "husky install && prisma generate"
 	},
 	"dependencies": {
+		"@conte-ltd/trpc-shield": "^0.0.8",
 		"@hookform/error-message": "^2.0.0",
 		"@hookform/resolvers": "^2.9.8",
 		"@next-auth/prisma-adapter": "^1.0.4",

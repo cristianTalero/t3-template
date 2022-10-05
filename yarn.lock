@@ -1133,6 +1133,11 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@conte-ltd/trpc-shield@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@conte-ltd/trpc-shield/-/trpc-shield-0.0.8.tgz#5b4d8a090313ac32611fb63e4e017b6d5a232ad8"
+  integrity sha512-MubwLXfqBW/GbYJ7psWv3X5wDEgUc4WP38fGKG4iRjOzmu99e1+OpaPSFtj8ejgs3U0CUL/vl1QuBUTK8F4XXQ==
+
 "@csstools/postcss-cascade-layers@^1.1.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@csstools/postcss-cascade-layers/-/postcss-cascade-layers-1.1.1.tgz#8a997edf97d34071dd2e37ea6022447dd9e795ad"
