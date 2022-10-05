@@ -4,5 +4,6 @@
 	"singleQuote": true,
 	"useTabs": true,
 	"endOfLine": "auto",
-	"jsxSingleQuote": false
+	"jsxSingleQuote": false,
+	"arrowParens": "avoid"
 }
