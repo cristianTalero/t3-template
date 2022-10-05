@@ -6,7 +6,7 @@ import { withSuperjson } from 'next-superjson'
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetPrefix: process.env.NODE_ENV === 'production' ? `https://cdn.${process.env.VERCEL_URL}` : undefined
+  //assetPrefix: process.env.NODE_ENV === 'production' ? `https://cdn.${process.env.VERCEL_URL}` : undefined
 }
 
 const pwaConfig = {
