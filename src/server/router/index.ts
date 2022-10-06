@@ -1,7 +1,7 @@
 import { createRouter } from './context'
 import { exampleRouter } from './example'
 import { transformer } from 'utils/trpc'
-import { allow, shield } from '@conte-ltd/trpc-shield'
+import { allow, shield } from 'trpc-shield'
 import { TRPCError } from '@trpc/server'
 
 // Middlewares

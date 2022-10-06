@@ -1,8 +1,8 @@
-import { rule } from '@conte-ltd/trpc-shield'
+import { rule } from 'trpc-shield'
 import { getSession } from 'next-auth/react'
 
 // Verify if user is already  authenticated
-export const isAuthenticated = rule()(async (ctx) => {
+export const isAuthenticated = rule()(async ctx => {
 	const session = await getSession(ctx)
 
 	return session !== null
