@@ -13,6 +13,9 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// Import Jest adapter
+import 'cypress-jest-adapter'
+
 // Import commands.js using ES2015 syntax:
 import './commands'
 

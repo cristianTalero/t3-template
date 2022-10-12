@@ -6,6 +6,7 @@ import { SessionProvider } from 'next-auth/react'
 import { transformer } from 'utils/trpc'
 import NextNProgress from 'nextjs-progressbar'
 import 'styles/index.css'
+import { isClientSide } from 'utils/any'
 
 const MyApp: CustomAppType = ({
 	Component,
@@ -30,7 +31,7 @@ const MyApp: CustomAppType = ({
 }
 
 const getBaseUrl = () => {
-	if (typeof window !== 'undefined') return ''
+	if (isClientSide) return ''
 	else if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
 
 	return `http://localhost:${process.env.PORT ?? 3000}` // dev SSR should use localhost

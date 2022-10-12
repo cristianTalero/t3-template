@@ -1,3 +1,4 @@
+import CustomImage from 'components/utils/CustomImage'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { trpc } from 'utils/trpc'
@@ -76,6 +77,10 @@ const Home: NextPage = () => {
 					adipisci. Assumenda dignissimos eligendi sequi ut culpa distinctio
 					porro optio.
 				</p>
+				<figure>
+					<CustomImage src="/fhfd" alt="hola" height={100} width={100} />
+					<figcaption>Broken image</figcaption>
+				</figure>
 			</main>
 		</>
 	)

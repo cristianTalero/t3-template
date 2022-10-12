@@ -14,10 +14,15 @@ We try to keep this project as simple as possible, so you can start with the mos
 
 If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
+- [NextJS](https://nextjs.org/)
 - [Next-Auth.js](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
 - [TailwindCSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io) (using @next version? [see v10 docs here](https://alpha.trpc.io))
+- [Typescript](https://www.typescriptlang.org/)
+- [Cypress](https://cypress.io/)
+- [Sentry](https://sentry.io/)
+- [MongoDB (Default Prisma DB engine but you can use any)](https://mongodb.com/)
 
 ## How do I deploy this?
 
