@@ -7,8 +7,12 @@ export function toBase64(file: File) {
 			resolve(reader.result as string)
 		}
 
-		reader.onerror = (error) => {
+		reader.onerror = error => {
 			reject(error)
 		}
 	})
+}
+
+export function isRemote(src: string) {
+	return src.includes('http', 0)
 }
