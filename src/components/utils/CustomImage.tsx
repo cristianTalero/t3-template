@@ -3,9 +3,14 @@ import { useRef, useState } from 'react'
 import { useDidUpdate } from 'rooks'
 import { isRemote } from 'utils/files'
 
+const MIN_IMAGE_SIZE = 40
+
 function CustomImage(props: ImageProps) {
 	const [imageSrc, setImageSrc] = useState(props.src)
-	const isImageSmall = useRef(props.height === 40 && props.width === 40)
+	const isImageSmall = useRef(
+		(props.height as number) < MIN_IMAGE_SIZE &&
+			(props.width as number) < MIN_IMAGE_SIZE
+	)
 
 	useDidUpdate(() => setImageSrc(props.src), [props.src])
 
