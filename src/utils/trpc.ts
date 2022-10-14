@@ -2,16 +2,6 @@
 import type { AppRouter } from '../server/router'
 import { createReactQueryHooks } from '@trpc/react'
 import type { inferProcedureOutput, inferProcedureInput } from '@trpc/server'
-import superjson from 'superjson'
-import { uneval } from 'devalue'
-
-export const transformer = {
-	input: superjson,
-	output: {
-		serialize: (object: unknown) => uneval(object),
-		deserialize: (object: unknown) => eval(`(${object})`),
-	},
-}
 
 export const trpc = createReactQueryHooks<AppRouter>()
 

@@ -4032,11 +4032,6 @@ detective@^5.2.1:
     defined "^1.0.0"
     minimist "^1.2.6"
 
-devalue@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/devalue/-/devalue-4.0.0.tgz#efeadbc922894d468ad903029d4a7e65e37f4952"
-  integrity sha512-w25siwXyuMUqMr7jPlEjyNCp1vn0Jzj/fNg3qVt/r/Dpe8HjESh2V92L0jmh3uq4iJt0BvjH+Azk1pQzkcnDWA==
-
 dezalgo@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/dezalgo/-/dezalgo-1.0.3.tgz#7f742de066fc748bc8db820569dddce49bf0d456"
@@ -8941,10 +8936,10 @@ superagent@^8.0.0:
     qs "^6.11.0"
     semver "^7.3.7"
 
-superjson@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/superjson/-/superjson-1.10.0.tgz#279362e6c1789b0b6bdfa280e82ee43d0e0fa514"
-  integrity sha512-ks6I5fm5KXUbDqt4Epe1VwkKDaC9+kIj5HF7yhiHjChFne0EkFqsnTv1mdHE2IT6fq2CzLC3zeA/fw0BRIoNwA==
+superjson@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/superjson/-/superjson-1.10.1.tgz#9c73e9393489dddab89d638694eadcbf4bda2f36"
+  integrity sha512-7fvPVDHmkTKg6641B9c6vr6Zz5CwPtF9j0XFExeLxJxrMaeLU2sqebY3/yrI3l0K5zJ+H9QA3H+lIYj5ooCOkg==
   dependencies:
     copy-anything "^3.0.2"
 
@@ -9235,6 +9230,14 @@ trpc-shield@^0.1.1:
   integrity sha512-TySEf4lJoPkKCbSMpGtUp4tf42TMP90jiI9ugE3mpnLW5OAPToKkOlasszWSjyIWoTkM+IrsNEJX3rkfZm88Zw==
   dependencies:
     "@trpc/server" "^9.23.6"
+
+trpc-transformer@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/trpc-transformer/-/trpc-transformer-2.1.4.tgz#de198edb3fed7e5328c11a7ce7b89c798580c1cd"
+  integrity sha512-qm7U2DaVBR152ghKKOxNWTHW08ZDDC6GxliVRdcu7TZNb7yDYAyXNnTsLGkGqB9K6EProEcQdK/X/xNwbixv2w==
+  dependencies:
+    decimal.js "^10.4.1"
+    superjson "^1.10.1"
 
 ts-interface-checker@^0.1.9:
   version "0.1.13"

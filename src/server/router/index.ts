@@ -1,6 +1,6 @@
 import { createRouter } from './context'
 import { exampleRouter } from './example'
-import { transformer } from 'utils/trpc'
+import transformer from 'trpc-transformer'
 import { allow, shield } from 'trpc-shield'
 import { TRPCError } from '@trpc/server'
 
@@ -24,9 +24,9 @@ const permissions = shield(
 )
 
 export const appRouter = createRouter()
-	.transformer(transformer)
 	.merge('example.', exampleRouter)
 	.middleware(permissions)
+	.transformer(transformer)
 
 // export type definition of API
 export type AppRouter = typeof appRouter
