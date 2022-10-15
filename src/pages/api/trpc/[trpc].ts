@@ -3,9 +3,14 @@ import { appRouter } from 'server/router'
 import { createContext } from 'server/router/context'
 import { withSentry } from '@sentry/nextjs'
 
+const TRPC_MAX_SIZE = Number(process.env.NEXT_PUBLIC_TRPC_MAX_SIZE) / 1_000_000
+
 export const config = {
 	api: {
 		externalResolver: true,
+		bodyParser: {
+			sizeLimit: `${TRPC_MAX_SIZE}mb`,
+		},
 	},
 }
 
