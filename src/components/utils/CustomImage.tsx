@@ -5,7 +5,12 @@ import { isRemote } from 'utils/files'
 
 const MIN_IMAGE_SIZE = 40
 
-function CustomImage(props: ImageProps) {
+type CustomImageProps = {
+	withFull?: boolean
+} & ImageProps
+
+function CustomImage({ withFull = false, ...props }: CustomImageProps) {
+	const [full, setFull] = useState(false)
 	const [imageSrc, setImageSrc] = useState(props.src)
 	const isImageSmall = useRef(
 		(props.height as number) < MIN_IMAGE_SIZE &&
@@ -19,10 +24,13 @@ function CustomImage(props: ImageProps) {
 			{...props}
 			src={imageSrc}
 			alt={props.alt}
+			className={withFull ? 'cursor-pointer' : ''}
 			placeholder={isImageSmall.current ? 'empty' : 'blur'}
 			blurDataURL={typeof props.src === 'string' ? props.src : undefined}
 			onError={() => setImageSrc('/images/default/broken-img.png')}
-			unoptimized={isRemote(props.src as string)}
+			unoptimized={isRemote(imagesSrc as string)}
+			onClick={() => withFull && setFull(current => !current)}
+			objectFit={full ? 'contain' : props.objectFit}
 		/>
 	)
 }
