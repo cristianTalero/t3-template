@@ -28,9 +28,9 @@ function CustomImage({ withFull = false, ...props }: CustomImageProps) {
 			placeholder={isImageSmall.current ? 'empty' : 'blur'}
 			blurDataURL={typeof props.src === 'string' ? props.src : undefined}
 			onError={() => setImageSrc('/images/default/broken-img.png')}
-			unoptimized={isRemote(imagesSrc as string)}
+			unoptimized={isRemote(imageSrc as string)}
 			onClick={() => withFull && setFull(current => !current)}
-			objectFit={full ? 'contain' : props.objectFit}
+			objectFit={full ? 'contain' : 'cover'}
 		/>
 	)
 }
